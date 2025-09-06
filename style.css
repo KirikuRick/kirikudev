@@ -1,31 +1,99 @@
-img {
-  border-radius: 75px;
-  border: solid 5px;
-  border-color: white;
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
-
-h2 {
-  font-size: 18px;
-}
-
 body {
-  background-color: slateblue;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  font-family: Arial, sans-serif;
   color: white;
-  text-align: center;
 }
 
-a {
-  background-color: white;
-  font-size: 20px;
-  border-radius: 10px;
-  width: 100%;
-  display: inline-block;
-  margin: 3px auto;
-  color: slateblue;
+.container {
+  text-align: center;
+  width: 95vw;
+  max-width: 350px;
+}
+.avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid white;
+    margin: 20px 0;
+}
+h1 { 
+    margin: 10px 0; 
+}
+.link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+  background: rgba(255,255,255,0.2);
+  border-radius: 30px;
+  padding: 12px;
+  margin: 10px 0;
   text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: 0.5s;
+}
+.link img {
+  position: absolute;
+  left: 15px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.link:hover { background: rgba(255,255,255,0.4); }
+@media (min-width: 768px) {
+    .container { max-width: 600px; }
+    .link { font-size: 18px; padding: 15px; }
+}
+.icon {
+  height: 20px;
+  margin-right: 0px;
+}
+.typing-container {
+  text-align: center;
 }
 
-.center-link {
-  text-align: center;
+#typing-name, #typing-bio {
+  display: block;
+  white-space: normal;
+  word-break: break-word;
+  overflow: visible;
+  margin: 0 auto;
+}
+#typing-name { 
+  font-size: 28px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+#typing-bio {
+  font-size: 18px;
+  margin: 5px 0;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  vertical-align: bottom;
+  background: white;
+  margin-left: 2px;
+  animation: blink 0.7s steps(1) infinite;
 }
